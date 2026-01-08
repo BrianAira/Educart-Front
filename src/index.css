@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Esto obliga a Tailwind a obedecer a nuestro botón y no al sistema */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Esto le dice al navegador: por defecto, mi web es CLARA */
+:root {
+  color-scheme: light;
+}
