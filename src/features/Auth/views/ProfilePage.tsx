@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+
 import {
     Card,
     CardBody,
     Avatar,
     Button,
     Input,
-    Divider,
     Chip
 } from "@heroui/react";
 import {
@@ -18,6 +17,7 @@ import {
 import { useAuth } from "../hooks/useAuth";
 import { Link } from "react-router";
 import { EditProfileModal } from "../components/EditProfileModal";
+import { useState } from "react";
 
 export const ProfilePage = () => {
     const { user, logoutUser, updateUserState, loading } = useAuth();
@@ -46,7 +46,7 @@ export const ProfilePage = () => {
             {/* 1. Tarjeta Principal de Perfil */}
             <Card className="mb-6 overflow-visible">
                 {/* Banner Decorativo */}
-                <div className="h-40 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-t-xl relative">
+                <div className="h-40 bg-linear-to-r from-indigo-600 to-purple-600 rounded-t-xl relative">
                     {/* Avatar Flotante */}
                     <div className="absolute -bottom-12 left-8 p-1 bg-white dark:bg-neutral-900 rounded-full">
                         <Avatar
