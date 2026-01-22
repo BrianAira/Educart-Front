@@ -151,7 +151,7 @@ export const AdminDashboard = () => {
                 {/* GRÁFICO TOP PRODUCTOS */}
                 <Card className="p-4 shadow-sm">
                     <h3 className="text-lg font-bold mb-4 px-2">Top Productos Más Vendidos</h3>
-                    <div className="h-[300px] w-full">
+                    <div className="h-75 w-full">
                         {dashboardData.topProducts.length > 0 ? (
                             <ResponsiveContainer width="100%" height="100%">
                                 <BarChart data={dashboardData.topProducts} layout="vertical" margin={{ left: 10, right: 30 }} style={{ color: "blue" }}>
@@ -174,7 +174,7 @@ export const AdminDashboard = () => {
                 {/* GRÁFICO DISTRIBUCIÓN */}
                 <Card className="p-4 shadow-sm">
                     <h3 className="text-lg font-bold mb-4 px-2">Distribución por Categoría</h3>
-                    <div className="h-[300px] w-full">
+                    <div className="h-75 w-full">
                         <ResponsiveContainer width="100%" height="100%">
                             <PieChart>
                                 <Pie
