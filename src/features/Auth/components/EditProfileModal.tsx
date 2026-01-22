@@ -86,7 +86,7 @@ export const EditProfileModal: React.FC<EditProfileModalProps> = ({
   });
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="lg" backdrop="blur">
+    <Modal isOpen={isOpen} onClose={onClose} size="lg" backdrop="blur" className="bg-white dark:bg-zinc-950">
       <ModalContent>
         {(onClose) => (
           <form
@@ -110,7 +110,7 @@ export const EditProfileModal: React.FC<EditProfileModalProps> = ({
                 children={(field) => (
                   <Input
                     label="Nombre Completo"
-                    startContent={<FaUser className="text-default-400" />}
+                    startContent={<FaUser className="text-default-400 " />}
                     value={field.state.value}
                     onBlur={field.handleBlur}
                     onValueChange={field.handleChange}
@@ -135,7 +135,7 @@ export const EditProfileModal: React.FC<EditProfileModalProps> = ({
                       isInvalid={!!field.state.meta.errors.length}
                       errorMessage={field.state.meta.errors.join(", ")}
                       variant="bordered"
-                      className="flex-1"
+                      className="flex-1 mb"
                     />
                   )}
                 />
