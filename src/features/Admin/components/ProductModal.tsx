@@ -24,6 +24,11 @@ export const ProductModal: React.FC<ProductModalProps> = ({
             size="2xl"
             scrollBehavior="inside"
             backdrop="blur"
+            // Añadimos estas clases para asegurar que el contenedor del portal tenga fondo
+            classNames={{
+                base: "bg-white dark:bg-neutral-900", // Fuerza el fondo del modal según el tema
+                backdrop: "bg-black/50 backdrop-blur-md", // Asegura que el fondo de atrás sea oscuro/borroso
+            }}
         >
             <ModalContent>
                 {(onClose) => (
