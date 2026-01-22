@@ -44,7 +44,7 @@ export async function getProducts(filters?: {
     }
   }
 
-  const response = await apiClient.get<ProductApi[]>("/products", {
+  const response = await apiClient.get<ProductApi[]>("/products/", {
     params,
   });
 
@@ -60,9 +60,9 @@ export async function createProduct(
   payload: NewProductPayload
 ): Promise<IProduct> {
   const body = toProductApiCreate(payload);
-  const response = await apiClient.post<ProductApi>("/products", body);
+  const response = await apiClient.post<ProductApi>("/products/", body);
   return toProduct(response.data);
-}
+} 
 
 export async function updateProduct(
   id: number,
