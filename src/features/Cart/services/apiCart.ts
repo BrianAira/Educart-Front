@@ -14,12 +14,12 @@ export interface Cart {
 }
 
 export const getCart = async (): Promise<Cart> => {
-  const { data } = await apiClient.get(`/cart`);
+  const { data } = await apiClient.get(`/cart/`);
   return data;
 };
 
 export const addItemToCart = async (productId: number, quantity: number) => {
-  const { data } = await apiClient.post(`/cart`, {
+  const { data } = await apiClient.post(`/cart/`, {
     product_id: productId,
     quantity,
   });
@@ -27,7 +27,7 @@ export const addItemToCart = async (productId: number, quantity: number) => {
 };
 
 export const updateItemQuantity = async (productId: number, quantity: number) => {
-  const { data } = await apiClient.put(`/cart`, {
+  const { data } = await apiClient.put(`/cart/`, {
     product_id: productId,
     quantity,
   });
@@ -40,7 +40,7 @@ export const removeItemFromCart = async (itemId: number) => {
 };
 
 export const clearCart = async () => {
-  const { data } = await apiClient.delete(`/cart`);
+  const { data } = await apiClient.delete(`/cart/`);
   return data;
 };
 
