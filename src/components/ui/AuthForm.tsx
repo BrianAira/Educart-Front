@@ -59,7 +59,7 @@ export const AuthForm: React.FC<AuthFormProps> = ({
             <Input
               label={field.label}
               type={field.type || "text"}
-              placeholder="Ingresa tu email"
+              placeholder={field.label}
               variant="bordered"
               value={fieldApi.state.value}
               onChange={(e) => fieldApi.handleChange(e.target.value)}
