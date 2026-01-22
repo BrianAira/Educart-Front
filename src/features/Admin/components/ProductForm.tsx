@@ -106,8 +106,9 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                 form.handleSubmit();
             }}
             className="flex flex-col gap-4 max-h-[80vh] overflow-y-auto"
+            // className="flex flex-col h-full"
         >
-            <ModalBody className="gap-4">
+            <ModalBody className="gap-8 py-4">
                 {/* Campo Nombre */}
                 <form.Field
                     name="name"
@@ -117,13 +118,26 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                     children={(field) => (
                         <Input
                             label="Nombre del Producto"
+                            labelPlacement="outside"
                             placeholder="Ej: Tablet Educativa"
+
                             value={field.state.value}
                             onBlur={field.handleBlur}
                             onValueChange={field.handleChange}
                             isInvalid={!!field.state.meta.errors.length}
                             errorMessage={field.state.meta.errors.join(", ")}
                             variant="bordered"
+                            
+                            fullWidth
+                            color="default"
+                            classNames={{
+                                // 1. Añadimos 'block' y 'mb-2' para que el label empuje el input hacia abajo
+        label: "font-medium text-default-700 block pb-4", 
+        // 2. Quitamos h-12 y dejamos que el padding maneje la altura (más seguro)
+        inputWrapper: "border-2 min-h-12 py-2", 
+        // 3. Esta es la clave: el contenedor principal debe ser relativo
+        mainWrapper: "relative pt-2"
+                            }}
                         />
                     )}
                 />
@@ -137,7 +151,8 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                         children={(field) => (
                             <Input
                                 label="SKU"
-                                placeholder="TEC-001"
+                                placeholder=" "
+                                // placeholder="TEC-001"
                                 value={field.state.value}
                                 onBlur={field.handleBlur}
                                 onValueChange={field.handleChange}
@@ -145,6 +160,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                                 errorMessage={field.state.meta.errors.join(", ")}
                                 variant="bordered"
                                 className="flex-1"
+                                labelPlacement="inside"
                             />
                         )}
                     />
@@ -164,6 +180,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                                 errorMessage={field.state.meta.errors.join(", ")}
                                 variant="bordered"
                                 className="flex-1"
+                                labelPlacement="outside"
                             />
                         )}
                     />
@@ -185,6 +202,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                                 isInvalid={!!field.state.meta.errors.length}
                                 errorMessage={field.state.meta.errors.join(", ")}
                                 variant="flat"
+                                labelPlacement="inside"
                             />
                         )}
                     />
@@ -203,6 +221,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                                 isInvalid={!!field.state.meta.errors.length}
                                 errorMessage={field.state.meta.errors.join(", ")}
                                 variant="flat"
+                                labelPlacement="inside"
                             />
                         )}
                     />
@@ -221,6 +240,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                             isInvalid={!!field.state.meta.errors.length}
                             errorMessage={field.state.meta.errors.join(", ")}
                             variant="bordered"
+                            labelPlacement="inside"
 
                         >
                             {categories.map((cat) => (
@@ -245,6 +265,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                             isInvalid={!!field.state.meta.errors.length}
                             errorMessage={field.state.meta.errors.join(", ")}
                             variant="bordered"
+                            labelPlacement="inside"
                         />
                     )}
                 />
@@ -262,6 +283,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                             isInvalid={!!field.state.meta.errors.length}
                             errorMessage={field.state.meta.errors.join(", ")}
                             variant="bordered"
+                            labelPlacement="inside"
                         />
                     )}
                 />
