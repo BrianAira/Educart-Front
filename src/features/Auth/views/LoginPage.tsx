@@ -11,7 +11,7 @@ export const LoginPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  useEffect(() => {
+  useEffect(() => { 
     if (token && user) {
 
       const from = location.state?.from?.pathname;
@@ -29,6 +29,7 @@ export const LoginPage = () => {
   }, [token, user, navigate, location]);
 
   const handleLogin = async (data: Record<string, string>) => {
+    console.log("Datos enviados a la API:", data);
     await login(data.username, data.password);
 
   };
