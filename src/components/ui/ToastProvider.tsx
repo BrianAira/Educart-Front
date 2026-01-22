@@ -65,7 +65,7 @@ const HeroToast = ({ message, type, onClose }: { message: string, type: ToastTyp
     const style = styles[type];
 
     return (
-        <Card className={`w-80 shadow-lg border-l-4 ${type === 'success' ? 'border-success' : type === 'error' ? 'border-danger' : 'border-primary'}`}>
+        <Card className={`w-80 shadow-lg border-l-4 bg-white dark:bg-zinc-950${type === 'success' ? 'border-success' : type === 'error' ? 'border-danger' : 'border-primary'}`}>
             <CardBody className="flex flex-row items-center gap-3 p-3 overflow-hidden">
                 {/* Icono */}
                 <div className={`p-2 rounded-full ${style.color} ${style.text} text-lg`}>
