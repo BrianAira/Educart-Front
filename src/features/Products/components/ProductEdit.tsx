@@ -1,4 +1,3 @@
-import React from 'react';
 import { useForm } from '@tanstack/react-form';
 import type { IProduct } from '../types/Product';
 import { useUpdateProduct } from '../hooks/useUpdateProduct';

@@ -187,7 +187,7 @@ export const AdminDashboard = () => {
                                     paddingAngle={5}
                                     dataKey="value"
                                 >
-                                    {dashboardData.categoryData.map((entry, index) => (
+                                    {dashboardData.categoryData.map((_, index) => (
                                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                     ))}
                                 </Pie>

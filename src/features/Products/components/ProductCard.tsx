@@ -131,7 +131,9 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         <ProductEdit
           product={product}
           onClose={() => setIsEditModalOpen(false)}
-          onSave={(updatedProduct) => {
+          // onSave={(updatedProduct) => {
+          onSave={() => {
+
             setIsEditModalOpen(false);
           }}
         />

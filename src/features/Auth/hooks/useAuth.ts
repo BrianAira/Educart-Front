@@ -76,9 +76,9 @@ export const useAuth = () => {
     try {
       dispatch(loginStart())
 
-      const response = await apiClient.patch("/auth/me", {
-        ...updatedUserData
-      });
+      // const response = await apiClient.patch("/auth/me", {
+      //   ...updatedUserData
+      // });
 
 
       // Guardar en Redux + localStorage;

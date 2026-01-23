@@ -37,7 +37,7 @@ export function useUpdateProduct() {
             queryClient.setQueryData<IProduct>(["products", updatedProduct.id], updatedProduct);
         },
 
-        onError: (error, variables) => {
+        onError: (error) => {
             console.error("Error al actualizar el producto:", error);
         },
     });

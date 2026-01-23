@@ -1,4 +1,3 @@
-import React from 'react';
 import { useForm } from '@tanstack/react-form';
 import { useCreateProduct } from '../hooks/useCreateProduct'; // Ajusta la ruta
 import { useCategories } from '../hooks/useCategory';
@@ -260,7 +259,7 @@ export const ProductCreate = ({ onClose }: ProductCreateProps) => {
 
                 <form.Subscribe
                     selector={(state) => [state.canSubmit, state.isSubmitting]}
-                    children={([canSubmit, isSubmitting]) => (
+                    children={([canSubmit]) => (
                         <button
                             type="submit"
                             className={`px-4 py-2 text-sm font-medium text-white rounded-md transition-colors ${isSaving || !canSubmit

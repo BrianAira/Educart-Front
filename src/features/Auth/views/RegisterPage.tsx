@@ -11,7 +11,7 @@ import { useAuth } from "../hooks/useAuth";
 import { AuthForm } from "../../../components/ui/AuthForm";
 
 export const RegisterPage = () => {
-  const { register, isAuthenticated, loading } = useAuth();
+  const { register, loading } = useAuth();
   const navigate = useNavigate();
 
   const handleRegister = async (data: Record<string, string>) => {
